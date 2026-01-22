@@ -1,0 +1,1232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Blox Fruits Competitive - Community Rankings & Statistics</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="author" content="Blox Fruits Competitive">
+    <meta name="keywords" content="blox fruits, roblox, competitive, rankings, statistics, players, crews">
+    <meta name="description" content="Blox Fruits Competitive - The ultimate platform for Blox Fruits rankings, player statistics, crew comparisons and competitive community.">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <style>
+      :root {
+        --primary-color: #0d6efd;
+        --secondary-color: #6c757d;
+        --dark-color: #0d1117;
+        --darker-color: #010409;
+        --light-color: #f8f9fa;
+        --accent-blue: #58a6ff;
+        --accent-green: #238636;
+        --accent-red: #da3633;
+        --border-color: #30363d;
+        --text-primary: #c9d1d9;
+        --text-secondary: #8b949e;
+      }
+      
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: var(--dark-color);
+        color: var(--text-primary);
+        line-height: 1.6;
+      }
+      
+      /* Header Styles */
+      header {
+        background-color: var(--darker-color);
+        border-bottom: 1px solid var(--border-color);
+      }
+      
+      .main-logo {
+        font-family: 'Roboto Mono', monospace;
+        font-weight: 700;
+        font-size: 1.5rem;
+        color: var(--accent-blue);
+      }
+      
+      .search-bar {
+        background-color: var(--darker-color);
+        border: 1px solid var(--border-color);
+      }
+      
+      .search-bar input {
+        color: var(--text-primary);
+        background-color: transparent !important;
+      }
+      
+      .search-bar input::placeholder {
+        color: var(--text-secondary);
+      }
+      
+      .support-box h5 {
+        color: var(--accent-blue);
+      }
+      
+      .rounded-circle.bg-light {
+        background-color: var(--darker-color) !important;
+        border: 1px solid var(--border-color);
+      }
+      
+      .cart-total {
+        color: var(--accent-blue);
+      }
+      
+      /* Navigation */
+      .main-menu .navbar-nav .nav-link {
+        color: var(--text-primary);
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+      }
+      
+      .main-menu .navbar-nav .nav-link:hover,
+      .main-menu .navbar-nav .nav-link.active {
+        color: var(--accent-blue);
+      }
+      
+      .dropdown-menu {
+        background-color: var(--darker-color);
+        border: 1px solid var(--border-color);
+      }
+      
+      .dropdown-item {
+        color: var(--text-primary);
+      }
+      
+      .dropdown-item:hover {
+        background-color: var(--dark-color);
+        color: var(--accent-blue);
+      }
+      
+      .filter-categories {
+        background-color: var(--darker-color);
+        color: var(--text-primary);
+        border: 1px solid var(--border-color) !important;
+        padding: 0.375rem 0.75rem;
+      }
+      
+      /* Section Headers */
+      .section-header {
+        color: var(--text-primary);
+      }
+      
+      .section-title {
+        color: var(--accent-blue);
+        font-weight: 700;
+      }
+      
+      .btn-link {
+        color: var(--accent-blue);
+      }
+      
+      .btn-link:hover {
+        color: var(--accent-blue);
+        text-decoration: underline;
+      }
+      
+      .btn-primary {
+        background-color: var(--accent-blue);
+        border-color: var(--accent-blue);
+      }
+      
+      .btn-primary:hover {
+        background-color: #1f6feb;
+        border-color: #1f6feb;
+      }
+      
+      /* Cards & Tables */
+      .card {
+        background-color: var(--darker-color);
+        border: 1px solid var(--border-color);
+        color: var(--text-primary);
+      }
+      
+      .card-title {
+        color: var(--accent-blue);
+      }
+      
+      .table {
+        color: var(--text-primary);
+      }
+      
+      .table th {
+        border-color: var(--border-color);
+        background-color: var(--darker-color);
+        color: var(--accent-blue);
+      }
+      
+      .table td {
+        border-color: var(--border-color);
+      }
+      
+      .table-striped tbody tr:nth-of-type(odd) {
+        background-color: rgba(88, 166, 255, 0.05);
+      }
+      
+      /* Region Filter */
+      .region-filter {
+        background-color: var(--darker-color);
+        border: 1px solid var(--border-color);
+        color: var(--text-primary);
+        padding: 0.375rem 0.75rem;
+      }
+      
+      /* Stats Cards */
+      .stat-card {
+        background: linear-gradient(135deg, var(--darker-color) 0%, #161b22 100%);
+        border: 1px solid var(--border-color);
+        border-radius: 0.5rem;
+        padding: 1.5rem;
+        transition: transform 0.2s;
+      }
+      
+      .stat-card:hover {
+        transform: translateY(-5px);
+        border-color: var(--accent-blue);
+      }
+      
+      .stat-value {
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: var(--accent-blue);
+        line-height: 1;
+      }
+      
+      .stat-label {
+        color: var(--text-secondary);
+        font-size: 0.875rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+      
+      /* Footer */
+      footer {
+        background-color: var(--darker-color);
+        border-top: 1px solid var(--border-color);
+      }
+      
+      .widget-title {
+        color: var(--accent-blue);
+        font-weight: 600;
+      }
+      
+      .menu-list .nav-link {
+        color: var(--text-secondary);
+        padding: 0.25rem 0;
+      }
+      
+      .menu-list .nav-link:hover {
+        color: var(--accent-blue);
+      }
+      
+      .social-links .btn-outline-light {
+        border-color: var(--border-color);
+        color: var(--text-secondary);
+      }
+      
+      .social-links .btn-outline-light:hover {
+        border-color: var(--accent-blue);
+        color: var(--accent-blue);
+        background-color: transparent;
+      }
+      
+      /* Footer Bottom */
+      #footer-bottom {
+        background-color: #010409;
+        border-top: 1px solid var(--border-color);
+      }
+      
+      /* Custom Swiper Navigation */
+      .swiper-buttons .btn {
+        background-color: var(--darker-color);
+        border: 1px solid var(--border-color);
+        color: var(--text-primary);
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+      }
+      
+      .swiper-buttons .btn:hover {
+        border-color: var(--accent-blue);
+        color: var(--accent-blue);
+      }
+      
+      /* Badges */
+      .badge.bg-success {
+        background-color: var(--accent-green) !important;
+      }
+      
+      .badge.bg-primary {
+        background-color: var(--accent-blue) !important;
+      }
+      
+      /* Form Controls */
+      .form-control, .form-select {
+        background-color: var(--darker-color);
+        border: 1px solid var(--border-color);
+        color: var(--text-primary);
+      }
+      
+      .form-control:focus, .form-select:focus {
+        background-color: var(--darker-color);
+        border-color: var(--accent-blue);
+        color: var(--text-primary);
+        box-shadow: 0 0 0 0.25rem rgba(88, 166, 255, 0.25);
+      }
+      
+      /* Responsive Adjustments */
+      @media (max-width: 768px) {
+        .main-logo {
+          font-size: 1.25rem;
+        }
+        
+        .stat-value {
+          font-size: 2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- SVG Icons (Updated for gaming/competitive theme) -->
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <defs>
+        <symbol xmlns="http://www.w3.org/2000/svg" id="trophy" viewBox="0 0 24 24">
+          <path fill="currentColor" d="M21 4h-3V3a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v1H3a1 1 0 0 0-1 1v3a4 4 0 0 0 4 4h.54A6 6 0 0 0 11 15.91V18h-2a3 3 0 0 0-3 3v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1v-1a3 3 0 0 0-3-3h-2v-2.09A6 6 0 0 0 17.46 12H18a4 4 0 0 0 4-4V5a1 1 0 0 0-1-1ZM6 10a2 2 0 0 1-2-2V6h2v.54A6 6 0 0 0 6.92 10ZM10 12a4 4 0 0 1-4-4V4h8v4a4 4 0 0 1-4 4Zm10-4a2 2 0 0 1-2 2h-.08A6 6 0 0 0 18 6.54V6h2Z"/>
+        </symbol>
+        <symbol xmlns="http://www.w3.org/2000/svg" id="users" viewBox="0 0 24 24">
+          <path fill="currentColor" d="M15 12c2.21 0 4-1.79 4-4s-1.79-4-4-4s-4 1.79-4 4s1.79 4 4 4zm-9-2V7H4v3H1v2h3v3h2v-3h3v-2H6zm9 4c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+        </symbol>
+        <symbol xmlns="http://www.w3.org/2000/svg" id="sword" viewBox="0 0 24 24">
+          <path fill="currentColor" d="M6.92 5H5l9 9l1-.94m4.96 6.06a.996.996 0 0 0 0-1.41l-2.34-2.34l1.42-1.41l2.34 2.34a.996.996 0 0 0 1.41 0l.71-.71a.996.996 0 0 0 0-1.41l-2.34-2.34l1.42-1.41l2.34 2.34a.996.996 0 0 0 1.41 0l.71-.71a.996.996 0 0 0 0-1.41L18.37 2.29a.996.996 0 0 0-1.41 0l-.71.71a.996.996 0 0 0 0 1.41l2.34 2.34l-1.41 1.42l-2.34-2.34a.996.996 0 0 0-1.41 0l-.71.71a.996.996 0 0 0 0 1.41l2.34 2.34l-1.41 1.42l-2.34-2.34a.996.996 0 0 0-1.41 0l-6.36 6.36a.996.996 0 0 0 0 1.41l.71.71a.996.996 0 0 0 1.41 0Z"/>
+        </symbol>
+        <symbol xmlns="http://www.w3.org/2000/svg" id="chart" viewBox="0 0 24 24">
+          <path fill="currentColor" d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/>
+        </symbol>
+        <symbol xmlns="http://www.w3.org/2000/svg" id="ranking" viewBox="0 0 24 24">
+          <path fill="currentColor" d="m12 2l4.09 8.26L22 10l-6.18 3.08L19 20l-7-4.74L5 20l3.18-6.92L2 10l5.91-.74L12 2z"/>
+        </symbol>
+        <symbol xmlns="http://www.w3.org/2000/svg" id="calendar" viewBox="0 0 24 24">
+          <path fill="currentColor" d="M19 4h-2V3a1 1 0 0 0-2 0v1H9V3a1 1 0 0 0-2 0v1H5a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3Zm1 15a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-7h16Zm0-9H4V7a1 1 0 0 1 1-1h2v1a1 1 0 0 0 2 0V6h6v1a1 1 0 0 0 2 0V6h2a1 1 0 0 1 1 1Z"/>
+        </symbol>
+        <symbol xmlns="http://www.w3.org/2000/svg" id="globe" viewBox="0 0 24 24">
+          <path fill="currentColor" d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm8 10a7.92 7.92 0 0 1-1.69 4.9L7.1 5.69A7.92 7.92 0 0 1 12 4a8 8 0 0 1 8 8ZM4 12a7.92 7.92 0 0 1 1.69-4.9L16.9 18.31A7.92 7.92 0 0 1 12 20a8 8 0 0 1-8-8Z"/>
+        </symbol>
+        <symbol xmlns="http://www.w3.org/2000/svg" id="download" viewBox="0 0 24 24">
+          <path fill="currentColor" d="M18 15v3H6v-3H4v3c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2v-3h-2zm-1-4l-1.41-1.41L13 12.17V4h-2v8.17L8.41 9.59L7 11l5 5l5-5z"/>
+        </symbol>
+        <symbol xmlns="http://www.w3.org/2000/svg" id="search" viewBox="0 0 24 24">
+          <path fill="currentColor" d="M21.71 20.29L18 16.61A9 9 0 1 0 16.61 18l3.68 3.68a1 1 0 0 0 1.42 0a1 1 0 0 0 0-1.39ZM11 18a7 7 0 1 1 7-7a7 7 0 0 1-7 7Z"/>
+        </symbol>
+        <symbol xmlns="http://www.w3.org/2000/svg" id="user" viewBox="0 0 24 24">
+          <path fill="currentColor" d="M15.71 12.71a6 6 0 1 0-7.42 0a10 10 0 0 0-6.22 8.18a1 1 0 0 0 2 .22a8 8 0 0 1 15.9 0a1 1 0 0 0 1 .89h.11a1 1 0 0 0 .88-1.1a10 10 0 0 0-6.25-8.19ZM12 12a4 4 0 1 1 4-4a4 4 0 0 1-4 4Z"/>
+        </symbol>
+        <symbol xmlns="http://www.w3.org/2000/svg" id="settings" viewBox="0 0 24 24">
+          <path fill="currentColor" d="M12 15.5A3.5 3.5 0 1 0 8.5 12A3.5 3.5 0 0 0 12 15.5zm0-5A1.5 1.5 0 1 1 10.5 12A1.5 1.5 0 0 1 12 10.5zm7.5-1h-1.86a5.82 5.82 0 0 0-.42-1.03l1.36-1.36l-1.06-1.06l-1.36 1.36a5.82 5.82 0 0 0-1.03-.42V4.5h-1.5v1.86a5.82 5.82 0 0 0-1.03.42L9.56 5.42L8.5 6.48l1.36 1.36a5.82 5.82 0 0 0-.42 1.03H7.5v1.5h1.86a5.82 5.82 0 0 0 .42 1.03L8.42 13.9l1.06 1.06l1.36-1.36a5.82 5.82 0 0 0 1.03.42v1.86h1.5v-1.86a5.82 5.82 0 0 0 1.03-.42l1.36 1.36l1.06-1.06l-1.36-1.36a5.82 5.82 0 0 0 .42-1.03h1.86z"/>
+        </symbol>
+      </defs>
+    </svg>
+
+    <header>
+      <div class="container-fluid">
+        <div class="row py-3 border-bottom">
+          
+          <div class="col-sm-4 col-lg-3 text-center text-sm-start">
+            <div class="main-logo">
+              <a href="index.html" class="text-decoration-none">
+                BLOX FRUITS COMPETITIVE
+              </a>
+            </div>
+          </div>
+          
+          <div class="col-sm-6 offset-sm-2 offset-md-0 col-lg-5 d-none d-lg-block">
+            <div class="search-bar row p-2 my-2 rounded-4">
+              <div class="col-md-4 d-none d-md-block">
+                <select class="form-select border-0 bg-transparent">
+                  <option>All Categories</option>
+                  <option>Players</option>
+                  <option>Crews</option>
+                  <option>Statistics</option>
+                  <option>Events</option>
+                </select>
+              </div>
+              <div class="col-11 col-md-7">
+                <form id="search-form" class="text-center" action="index.html" method="post">
+                  <input type="text" class="form-control border-0 bg-transparent" placeholder="Search players, crews, or statistics..." />
+                </form>
+              </div>
+              <div class="col-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#search"></use></svg>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-sm-8 col-lg-4 d-flex justify-content-end gap-5 align-items-center mt-4 mt-sm-0 justify-content-center justify-content-sm-end">
+            <div class="support-box text-end d-none d-xl-block">
+              <span class="fs-6 text-muted">Last Updated</span>
+              <h5 class="mb-0">Today, 15:30 UTC</h5>
+            </div>
+
+            <ul class="d-flex justify-content-end list-unstyled m-0">
+              <li>
+                <a href="#" class="rounded-circle bg-light p-2 mx-1">
+                  <svg width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#user"></use></svg>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="rounded-circle bg-light p-2 mx-1">
+                  <svg width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#settings"></use></svg>
+                </a>
+              </li>
+            </ul>
+
+            <div class="cart text-end d-none d-lg-block">
+              <button class="border-0 bg-transparent d-flex flex-column gap-2 lh-1" type="button">
+                <span class="fs-6 text-muted">Total Players</span>
+                <span class="cart-total fs-5 fw-bold">48,927</span>
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="container-fluid">
+        <div class="row py-3">
+          <div class="d-flex justify-content-center justify-content-sm-between align-items-center">
+            <nav class="main-menu d-flex navbar navbar-expand-lg">
+
+              <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                aria-controls="offcanvasNavbar">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+
+              <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+
+                <div class="offcanvas-header justify-content-center">
+                  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+
+                <div class="offcanvas-body">
+              
+                  <select class="filter-categories border-0 mb-0 me-5">
+                    <option>Filter by Region</option>
+                    <option>Global</option>
+                    <option>North America</option>
+                    <option>Europe</option>
+                    <option>Asia</option>
+                    <option>Oceania</option>
+                    <option>South America</option>
+                  </select>
+              
+                  <ul class="navbar-nav justify-content-end menu-list list-unstyled d-flex gap-md-3 mb-0">
+                    <li class="nav-item active">
+                      <a href="#home" class="nav-link">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="#events" class="nav-link">EVENTS</a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="#faq" class="nav-link">FAQ</a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="#macros" class="nav-link">MACROS</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" role="button" id="rankings" data-bs-toggle="dropdown" aria-expanded="false">RANKINGS</a>
+                      <ul class="dropdown-menu" aria-labelledby="rankings">
+                        <li><a href="players.html" class="dropdown-item">Players Ranking</a></li>
+                        <li><a href="crews.html" class="dropdown-item">Crews Ranking</a></li>
+                        <li><a href="alltime.html" class="dropdown-item">All-Time PR</a></li>
+                        <li><a href="monthly.html" class="dropdown-item">Monthly PR</a></li>
+                        <li><a href="wins.html" class="dropdown-item">Wins Leaderboard</a></li>
+                      </ul>
+                    </li>
+                    <li class="nav-item">
+                      <a href="#statistics" class="nav-link">STATISTICS</a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="#community" class="nav-link">COMMUNITY</a>
+                    </li>
+                  </ul>
+                
+                </div>
+
+              </div>
+            </nav>
+            
+            <div class="region-filter ms-3">
+              <select class="form-select border-0 bg-transparent">
+                <option>🌍 Global</option>
+                <option>🇺🇸 North America</option>
+                <option>🇪🇺 Europe</option>
+                <option>🇦🇺 Oceania</option>
+                <option>🇦🇸 Asia</option>
+                <option>🇧🇷 South America</option>
+                <option>🇷🇺 CIS</option>
+                <option>🇿🇦 Africa</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    
+    <!-- Main Stats Section -->
+    <section class="py-5">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="section-header d-flex justify-content-between mb-5">
+              <h2 class="section-title">Competitive Overview</h2>
+              <div class="d-flex align-items-center">
+                <div class="region-filter">
+                  <select class="form-select">
+                    <option>All-Time PR</option>
+                    <option>Monthly PR</option>
+                    <option>Wins</option>
+                    <option>Win Rate</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="row g-4 mb-5">
+          <div class="col-md-3 col-sm-6">
+            <div class="stat-card">
+              <div class="d-flex align-items-center mb-3">
+                <div class="bg-dark rounded-circle p-2 me-3">
+                  <svg width="24" height="24" class="text-primary"><use xlink:href="#trophy"></use></svg>
+                </div>
+                <div>
+                  <div class="stat-label">Top Player PR</div>
+                  <div class="stat-value">12,540</div>
+                </div>
+              </div>
+              <div class="text-muted small">ShadowNinja • Updated 2h ago</div>
+            </div>
+          </div>
+          
+          <div class="col-md-3 col-sm-6">
+            <div class="stat-card">
+              <div class="d-flex align-items-center mb-3">
+                <div class="bg-dark rounded-circle p-2 me-3">
+                  <svg width="24" height="24" class="text-primary"><use xlink:href="#users"></use></svg>
+                </div>
+                <div>
+                  <div class="stat-label">Active Players</div>
+                  <div class="stat-value">48,927</div>
+                </div>
+              </div>
+              <div class="text-muted small">+1,234 this week</div>
+            </div>
+          </div>
+          
+          <div class="col-md-3 col-sm-6">
+            <div class="stat-card">
+              <div class="d-flex align-items-center mb-3">
+                <div class="bg-dark rounded-circle p-2 me-3">
+                  <svg width="24" height="24" class="text-primary"><use xlink:href="#sword"></use></svg>
+                </div>
+                <div>
+                  <div class="stat-label">Total Matches</div>
+                  <div class="stat-value">2.1M</div>
+                </div>
+              </div>
+              <div class="text-muted small">45,231 today</div>
+            </div>
+          </div>
+          
+          <div class="col-md-3 col-sm-6">
+            <div class="stat-card">
+              <div class="d-flex align-items-center mb-3">
+                <div class="bg-dark rounded-circle p-2 me-3">
+                  <svg width="24" height="24" class="text-primary"><use xlink:href="#ranking"></use></svg>
+                </div>
+                <div>
+                  <div class="stat-label">Active Crews</div>
+                  <div class="stat-value">3,842</div>
+                </div>
+              </div>
+              <div class="text-muted small">Phoenix rising #1 crew</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Top Players Section -->
+    <section class="py-5 overflow-hidden">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="section-header d-flex flex-wrap justify-content-between mb-5">
+              <h2 class="section-title">Top Players Ranking</h2>
+              <div class="d-flex align-items-center">
+                <a href="players.html" class="btn-link text-decoration-none">View Full Ranking →</a>
+                <div class="swiper-buttons ms-3">
+                  <button class="swiper-prev players-carousel-prev btn btn-primary">❮</button>
+                  <button class="swiper-next players-carousel-next btn btn-primary">❯</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="col-md-12">
+            <div class="table-responsive">
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col">Rank</th>
+                    <th scope="col">Player</th>
+                    <th scope="col">Crew</th>
+                    <th scope="col">PR</th>
+                    <th scope="col">Wins</th>
+                    <th scope="col">Win Rate</th>
+                    <th scope="col">Region</th>
+                    <th scope="col">Trend</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="badge bg-primary">#1</span></td>
+                    <td><strong>ShadowNinja</strong></td>
+                    <td>Phoenix Rising</td>
+                    <td><strong>12,540</strong></td>
+                    <td>847</td>
+                    <td>78.5%</td>
+                    <td>North America</td>
+                    <td><span class="text-success">↑ 2</span></td>
+                  </tr>
+                  <tr>
+                    <td><span class="badge bg-secondary">#2</span></td>
+                    <td><strong>DragonSlayer</strong></td>
+                    <td>Ice Demons</td>
+                    <td><strong>12,210</strong></td>
+                    <td>921</td>
+                    <td>76.2%</td>
+                    <td>Europe</td>
+                    <td><span class="text-danger">↓ 1</span></td>
+                  </tr>
+                  <tr>
+                    <td><span class="badge bg-secondary">#3</span></td>
+                    <td><strong>VenomStrike</strong></td>
+                    <td>Shadow Collective</td>
+                    <td><strong>11,980</strong></td>
+                    <td>798</td>
+                    <td>74.8%</td>
+                    <td>Asia</td>
+                    <td><span class="text-success">↑ 3</span></td>
+                  </tr>
+                  <tr>
+                    <td>#4</td>
+                    <td><strong>ThunderFist</strong></td>
+                    <td>Phoenix Rising</td>
+                    <td><strong>11,750</strong></td>
+                    <td>732</td>
+                    <td>72.1%</td>
+                    <td>North America</td>
+                    <td><span class="text-success">↑ 1</span></td>
+                  </tr>
+                  <tr>
+                    <td>#5</td>
+                    <td><strong>FrostByte</strong></td>
+                    <td>Ice Demons</td>
+                    <td><strong>11,620</strong></td>
+                    <td>689</td>
+                    <td>71.5%</td>
+                    <td>Europe</td>
+                    <td><span class="text-danger">↓ 2</span></td>
+                  </tr>
+                  <tr>
+                    <td>#6</td>
+                    <td><strong>BlazeRunner</strong></td>
+                    <td>Solar Flare</td>
+                    <td><strong>11,450</strong></td>
+                    <td>654</td>
+                    <td>70.8%</td>
+                    <td>Oceania</td>
+                    <td><span class="text-success">↑ 4</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Top Crews & Recent Events -->
+    <section class="py-5">
+      <div class="container-fluid">
+        <div class="row">
+          
+          <div class="col-md-6">
+            <div class="card mb-3 border-0 shadow-sm">
+              <div class="card-header bg-darker border-bottom">
+                <h3 class="mb-0">Top Crews Ranking</h3>
+              </div>
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table class="table table-hover mb-0">
+                    <thead>
+                      <tr>
+                        <th scope="col">Rank</th>
+                        <th scope="col">Crew</th>
+                        <th scope="col">Avg PR</th>
+                        <th scope="col">Members</th>
+                        <th scope="col">W/L Ratio</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><span class="badge bg-primary">#1</span></td>
+                        <td><strong>Phoenix Rising</strong></td>
+                        <td>11,845</td>
+                        <td>48</td>
+                        <td>3.2</td>
+                      </tr>
+                      <tr>
+                        <td><span class="badge bg-secondary">#2</span></td>
+                        <td><strong>Ice Demons</strong></td>
+                        <td>11,620</td>
+                        <td>52</td>
+                        <td>2.9</td>
+                      </tr>
+                      <tr>
+                        <td><span class="badge bg-secondary">#3</span></td>
+                        <td><strong>Shadow Collective</strong></td>
+                        <td>11,430</td>
+                        <td>45</td>
+                        <td>2.7</td>
+                      </tr>
+                      <tr>
+                        <td>#4</td>
+                        <td><strong>Solar Flare</strong></td>
+                        <td>11,210</td>
+                        <td>50</td>
+                        <td>2.5</td>
+                      </tr>
+                      <tr>
+                        <td>#5</td>
+                        <td><strong>Thunder Legion</strong></td>
+                        <td>11,050</td>
+                        <td>47</td>
+                        <td>2.4</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="text-center mt-3">
+                  <a href="crews.html" class="btn btn-primary">View All Crews</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-6">
+            <div class="card mb-3 border-0 shadow-sm">
+              <div class="card-header bg-darker border-bottom">
+                <h3 class="mb-0">Recent Events & Tournaments</h3>
+              </div>
+              <div class="card-body">
+                <div class="list-group list-group-flush">
+                  <div class="list-group-item bg-transparent border-secondary px-0">
+                    <div class="d-flex w-100 justify-content-between">
+                      <h5 class="mb-1">Blox Fruits Championship Series</h5>
+                      <small class="text-muted">2 days ago</small>
+                    </div>
+                    <p class="mb-1">North America Regional Finals - Phoenix Rising vs Ice Demons</p>
+                    <small class="text-muted">Prize Pool: $5,000 • 128 teams</small>
+                  </div>
+                  <div class="list-group-item bg-transparent border-secondary px-0">
+                    <div class="d-flex w-100 justify-content-between">
+                      <h5 class="mb-1">Weekly Crew Showdown</h5>
+                      <small class="text-muted">5 days ago</small>
+                    </div>
+                    <p class="mb-1">Crew battle royale - All regions welcome</p>
+                    <small class="text-muted">Ongoing • Free entry</small>
+                  </div>
+                  <div class="list-group-item bg-transparent border-secondary px-0">
+                    <div class="d-flex w-100 justify-content-between">
+                      <h5 class="mb-1">1v1 Ladder Tournament</h5>
+                      <small class="text-muted">1 week ago</small>
+                    </div>
+                    <p class="mb-1">Monthly 1v1 competition - PR restricted brackets</p>
+                    <small class="text-muted">Registration open • $2,000 prize</small>
+                  </div>
+                </div>
+                <div class="text-center mt-3">
+                  <a href="events.html" class="btn btn-primary">View All Events</a>
+                </div>
+              </div>
+            </div>
+          </div>
+             
+        </div>
+      </div>
+    </section>
+
+    <!-- Regional Rankings -->
+    <section class="py-5 overflow-hidden">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="section-header d-flex flex-wrap justify-content-between my-5">
+              <h2 class="section-title">Regional Rankings</h2>
+              <div class="d-flex align-items-center">
+                <div class="region-filter me-3">
+                  <select class="form-select">
+                    <option>All Regions</option>
+                    <option>North America</option>
+                    <option>Europe</option>
+                    <option>Asia</option>
+                    <option>Oceania</option>
+                    <option>South America</option>
+                  </select>
+                </div>
+                <a href="rankings.html" class="btn-link text-decoration-none">Compare Regions →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="row g-4">
+          <div class="col-lg-3 col-md-6">
+            <div class="card h-100 border-0 shadow-sm">
+              <div class="card-header bg-darker">
+                <h5 class="mb-0">🇺🇸 North America</h5>
+              </div>
+              <div class="card-body">
+                <div class="text-center mb-3">
+                  <div class="stat-value">12,540</div>
+                  <div class="stat-label">Top PR</div>
+                </div>
+                <p class="card-text"><strong>Top Player:</strong> ShadowNinja</p>
+                <p class="card-text"><strong>Top Crew:</strong> Phoenix Rising</p>
+                <p class="card-text"><strong>Active Players:</strong> 18,234</p>
+                <div class="mt-3">
+                  <div class="progress mb-2" style="height: 6px;">
+                    <div class="progress-bar bg-primary" role="progressbar" style="width: 85%"></div>
+                  </div>
+                  <small class="text-muted">Competitiveness: 85%</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-lg-3 col-md-6">
+            <div class="card h-100 border-0 shadow-sm">
+              <div class="card-header bg-darker">
+                <h5 class="mb-0">🇪🇺 Europe</h5>
+              </div>
+              <div class="card-body">
+                <div class="text-center mb-3">
+                  <div class="stat-value">12,210</div>
+                  <div class="stat-label">Top PR</div>
+                </div>
+                <p class="card-text"><strong>Top Player:</strong> DragonSlayer</p>
+                <p class="card-text"><strong>Top Crew:</strong> Ice Demons</p>
+                <p class="card-text"><strong>Active Players:</strong> 15,892</p>
+                <div class="mt-3">
+                  <div class="progress mb-2" style="height: 6px;">
+                    <div class="progress-bar bg-primary" role="progressbar" style="width: 82%"></div>
+                  </div>
+                  <small class="text-muted">Competitiveness: 82%</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-lg-3 col-md-6">
+            <div class="card h-100 border-0 shadow-sm">
+              <div class="card-header bg-darker">
+                <h5 class="mb-0">🇦🇸 Asia</h5>
+              </div>
+              <div class="card-body">
+                <div class="text-center mb-3">
+                  <div class="stat-value">11,980</div>
+                  <div class="stat-label">Top PR</div>
+                </div>
+                <p class="card-text"><strong>Top Player:</strong> VenomStrike</p>
+                <p class="card-text"><strong>Top Crew:</strong> Shadow Collective</p>
+                <p class="card-text"><strong>Active Players:</strong> 9,452</p>
+                <div class="mt-3">
+                  <div class="progress mb-2" style="height: 6px;">
+                    <div class="progress-bar bg-primary" role="progressbar" style="width: 78%"></div>
+                  </div>
+                  <small class="text-muted">Competitiveness: 78%</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-lg-3 col-md-6">
+            <div class="card h-100 border-0 shadow-sm">
+              <div class="card-header bg-darker">
+                <h5 class="mb-0">🇦🇺 Oceania</h5>
+              </div>
+              <div class="card-body">
+                <div class="text-center mb-3">
+                  <div class="stat-value">11,450</div>
+                  <div class="stat-label">Top PR</div>
+                </div>
+                <p class="card-text"><strong>Top Player:</strong> BlazeRunner</p>
+                <p class="card-text"><strong>Top Crew:</strong> Solar Flare</p>
+                <p class="card-text"><strong>Active Players:</strong> 3,128</p>
+                <div class="mt-3">
+                  <div class="progress mb-2" style="height: 6px;">
+                    <div class="progress-bar bg-primary" role="progressbar" style="width: 71%"></div>
+                  </div>
+                  <small class="text-muted">Competitiveness: 71%</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Latest Updates & FAQ -->
+    <section class="py-5">
+      <div class="container-fluid">
+        <div class="row">
+          
+          <div class="col-md-8">
+            <div class="card border-0 shadow-sm mb-4">
+              <div class="card-header bg-darker">
+                <h3 class="mb-0">Latest Updates & Patch Notes</h3>
+              </div>
+              <div class="card-body">
+                <div class="mb-4">
+                  <div class="d-flex justify-content-between align-items-center mb-2">
+                    <h5 class="mb-0">Version 2.5.1 Balance Changes</h5>
+                    <span class="badge bg-primary">New</span>
+                  </div>
+                  <p class="text-muted">Latest balance adjustments affecting competitive play. Dragon Talon nerf, Buddha fruit adjustments, and combat mechanics updates.</p>
+                  <small class="text-muted">Posted 1 day ago • 342 comments</small>
+                </div>
+                
+                <div class="mb-4">
+                  <div class="d-flex justify-content-between align-items-center mb-2">
+                    <h5 class="mb-0">Tournament Rule Updates</h5>
+                    <span class="badge bg-success">Updated</span>
+                  </div>
+                  <p class="text-muted">New rules for upcoming championship series. Macro detection improvements and fair play policy enhancements.</p>
+                  <small class="text-muted">Posted 3 days ago • 128 comments</small>
+                </div>
+                
+                <div class="mb-4">
+                  <div class="d-flex justify-content-between align-items-center mb-2">
+                    <h5 class="mb-0">PR Calculation Changes</h5>
+                    <span class="badge bg-warning">Important</span>
+                  </div>
+                  <p class="text-muted">Updated PR calculation formula to better reflect skill level. Win streak bonuses and opponent PR weighting adjusted.</p>
+                  <small class="text-muted">Posted 1 week ago • 567 comments</small>
+                </div>
+                
+                <div class="text-center">
+                  <a href="updates.html" class="btn btn-primary">View All Updates</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-4">
+            <div class="card border-0 shadow-sm">
+              <div class="card-header bg-darker">
+                <h3 class="mb-0">Quick FAQ</h3>
+              </div>
+              <div class="card-body">
+                <div class="accordion" id="faqAccordion">
+                  <div class="accordion-item border-secondary">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button bg-darker text-white" type="button" data-bs-toggle="collapse" data-bs-target="#faqOne">
+                        How is PR calculated?
+                      </button>
+                    </h2>
+                    <div id="faqOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                      <div class="accordion-body">
+                        Power Rating (PR) is calculated based on win/loss ratio, opponent strength, win streaks, and recent performance.
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="accordion-item border-secondary">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed bg-darker text-white" type="button" data-bs-toggle="collapse" data-bs-target="#faqTwo">
+                        How often are rankings updated?
+                      </button>
+                    </h2>
+                    <div id="faqTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                      <div class="accordion-body">
+                        Player rankings update every 2 hours. Crew rankings update daily at 00:00 UTC.
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="accordion-item border-secondary">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed bg-darker text-white" type="button" data-bs-toggle="collapse" data-bs-target="#faqThree">
+                        How to report unfair play?
+                      </button>
+                    </h2>
+                    <div id="faqThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                      <div class="accordion-body">
+                        Use the report function on player profiles or contact moderators in our Discord server.
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="accordion-item border-secondary">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed bg-darker text-white" type="button" data-bs-toggle="collapse" data-bs-target="#faqFour">
+                        How to join a crew?
+                      </button>
+                    </h2>
+                    <div id="faqFour" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                      <div class="accordion-body">
+                        Apply through crew pages or get invited by crew leaders. Minimum PR requirements vary by crew.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="text-center mt-4">
+                  <a href="faq.html" class="btn btn-primary">View Full FAQ</a>
+                </div>
+              </div>
+            </div>
+          </div>
+             
+        </div>
+      </div>
+    </section>
+
+    <!-- Community Section -->
+    <section class="py-5 my-5">
+      <div class="container-fluid">
+        <div class="card border-0 shadow-sm" style="background: linear-gradient(135deg, #0d1117 0%, #161b22 100%);">
+          <div class="card-body p-5">
+            <div class="row align-items-center">
+              <div class="col-md-8">
+                <h2 class="mb-4">Join the Competitive Community</h2>
+                <p class="mb-4">Connect with thousands of competitive Blox Fruits players. Discuss strategies, organize matches, participate in tournaments, and stay updated with the latest meta changes.</p>
+                <div class="d-flex gap-3 flex-wrap">
+                  <a href="#" class="btn btn-primary">
+                    <svg width="20" height="20" class="me-2"><use xlink:href="#download"></use></svg>
+                    Download Data Pack
+                  </a>
+                  <a href="#" class="btn btn-outline-primary">
+                    <svg width="20" height="20" class="me-2"><use xlink:href="#users"></use></svg>
+                    Join Discord
+                  </a>
+                  <a href="#" class="btn btn-outline-primary">
+                    <svg width="20" height="20" class="me-2"><use xlink:href="#chart"></use></svg>
+                    View Statistics
+                  </a>
+                </div>
+              </div>
+              <div class="col-md-4 text-center">
+                <div class="bg-dark rounded-circle p-4 d-inline-block">
+                  <svg width="80" height="80" class="text-primary"><use xlink:href="#globe"></use></svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="py-5">
+      <div class="container-fluid">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="footer-menu">
+              <div class="main-logo mb-4">BLOX FRUITS COMPETITIVE</div>
+              <p class="text-muted">The definitive platform for Blox Fruits competitive rankings, statistics, and community.</p>
+              <div class="social-links mt-4">
+                <ul class="d-flex list-unstyled gap-2">
+                  <li>
+                    <a href="#" class="btn btn-outline-light">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="M22.46 6c-.77.35-1.6.58-2.46.69c.88-.53 1.56-1.37 1.88-2.38c-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29c0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15c0 1.49.75 2.81 1.91 3.56c-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07a4.28 4.28 0 0 0 4 2.98a8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21C16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56c.84-.6 1.56-1.36 2.14-2.23Z"/></svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="btn btn-outline-light">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2.04c-5.5 0-10 4.49-10 10.02c0 5 3.66 9.15 8.44 9.9v-7H7.9v-2.9h2.54V9.85c0-2.51 1.49-3.89 3.78-3.89c1.09 0 2.23.19 2.23.19v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.45 2.9h-2.33v7a10 10 0 0 0 8.44-9.9c0-5.53-4.5-10.02-10-10.02Z"/></svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="btn btn-outline-light">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8A1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5a5 5 0 0 1-5 5a5 5 0 0 1-5-5a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3Z"/></svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="btn btn-outline-light">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="M19.27 5.33C17.94 4.71 16.5 4.26 15 4a.09.09 0 0 0-.07.03c-.18.33-.39.76-.53 1.09a16.09 16.09 0 0 0-4.8 0c-.14-.34-.35-.76-.54-1.09c-.01-.02-.04-.03-.07-.03c-1.5.26-2.93.71-4.27 1.33c-.01 0-.02.01-.03.02c-2.72 4.07-3.47 8.03-3.1 11.95c0 .02.01.04.03.05c1.8 1.32 3.53 2.12 5.24 2.65c.03.01.06 0 .07-.02c.4-.55.76-1.13 1.07-1.74c.02-.04 0-.08-.04-.09c-.57-.22-1.11-.48-1.64-.78c-.04-.02-.04-.08-.01-.11c.11-.08.22-.17.33-.25c.02-.02.05-.02.07-.01c3.44 1.57 7.15 1.57 10.55 0c.02-.01.05-.01.07.01c.11.09.22.17.33.26c.04.03.04.09-.01.11c-.52.31-1.07.56-1.64.78c-.04.01-.05.06-.04.09c.32.61.68 1.19 1.07 1.74c.03.01.06.02.09.01c1.72-.53 3.45-1.33 5.25-2.65c.02-.01.03-.03.03-.05c.44-4.53-.73-8.46-3.1-11.95c-.01-.01-.02-.02-.04-.02M8.52 14.91c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.84 2.12-1.89 2.12m6.97 0c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.83 2.12-1.89 2.12Z"/></svg>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-2 col-sm-6">
+            <div class="footer-menu">
+              <h5 class="widget-title">Rankings</h5>
+              <ul class="menu-list list-unstyled">
+                <li class="menu-item">
+                  <a href="#" class="nav-link">Players Ranking</a>
+                </li>
+                <li class="menu-item">
+                  <a href="#" class="nav-link">Crews Ranking</a>
+                </li>
+                <li class="menu-item">
+                  <a href="#" class="nav-link">All-Time PR</a>
+                </li>
+                <li class="menu-item">
+                  <a href="#" class="nav-link">Monthly PR</a>
+                </li>
+                <li class="menu-item">
+                  <a href="#" class="nav-link">Wins Leaderboard</a>
+                </li>
+                <li class="menu-item">
+                  <a href="#" class="nav-link">Regional Rankings</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-2 col-sm-6">
+            <div class="footer-menu">
+              <h5 class="widget-title">Competitive</h5>
+              <ul class="menu-list list-unstyled">
+                <li class="menu-item">
+                  <a href="#" class="nav-link">Tournaments</a>
+                </li>
+                <li class="menu-item">
+                  <a href="#" class="nav-link">Events Calendar</a>
+                </li>
+                <li class="menu-item">
+                  <a href="#" class="nav-link">Rules & Guidelines</a>
+                </li>
+                <li class="menu-item">
+                  <a href="#" class="nav-link">Macro Detection</a>
+                </li>
+                <li class="menu-item">
+                  <a href="#" class="nav-link">Fair Play Policy</a>
+                </li>
+                <li class="menu-item">
+                  <a href="#" class="nav-link">Appeal System</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-2 col-sm-6">
+            <div class="footer-menu">
+              <h5 class="widget-title">Resources</h5>
+              <ul class="menu-list list-unstyled">
+                <li class="menu-item">
+                  <a href="#" class="nav-link">Statistics</a>
+                </li>
+                <li class="menu-item">
+                  <a href="#" class="nav-link">Meta Reports</a>
+                </li>
+                <li class="menu-item">
+                  <a href="#" class="nav-link">Patch Notes</a>
+                </li>
+                <li class="menu-item">
+                  <a href="#" class="nav-link">Strategy Guides</a>
+                </li>
+                <li class="menu-item">
+                  <a href="#" class="nav-link">API Access</a>
+                </li>
+                <li class="menu-item">
+                  <a href="#" class="nav-link">Data Downloads</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="footer-menu">
+              <h5 class="widget-title">Stay Updated</h5>
+              <p class="text-muted">Get notifications for ranking updates, tournament announcements, and meta changes.</p>
+              <form class="d-flex mt-3 gap-0" role="newsletter">
+                <input class="form-control rounded-start rounded-0" type="email" placeholder="Your Email" aria-label="Email Address">
+                <button class="btn btn-primary rounded-end rounded-0" type="submit">Subscribe</button>
+              </form>
+              <div class="mt-3 text-muted small">
+                <svg width="16" height="16" class="me-1"><use xlink:href="#calendar"></use></svg>
+                Data updated every 2 hours
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </footer>
+    
+    <div id="footer-bottom">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-6 copyright">
+            <p class="mb-0">© 2023 Blox Fruits Competitive. Not affiliated with Roblox Corporation.</p>
+          </div>
+          <div class="col-md-6 credit-link text-start text-md-end">
+            <p class="mb-0">
+              <a href="#" class="text-muted text-decoration-none me-3">Privacy Policy</a>
+              <a href="#" class="text-muted text-decoration-none me-3">Terms of Service</a>
+              <a href="#" class="text-muted text-decoration-none">Contact</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    
+    <script>
+      // Initialize tooltips
+      var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+      var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+      })
+      
+      // Simple data refresh simulation
+      function updateLiveData() {
+        const playerCount = document.querySelector('.cart-total')
+        const currentCount = parseInt(playerCount.textContent.replace(/,/g, ''))
+        const newCount = currentCount + Math.floor(Math.random() * 10)
+        playerCount.textContent = newCount.toLocaleString()
+      }
+      
+      // Update every 30 seconds
+      setInterval(updateLiveData, 30000)
+      
+      // Region filter functionality
+      document.querySelectorAll('.region-filter select').forEach(select => {
+        select.addEventListener('change', function() {
+          const region = this.value
+          console.log('Region changed to:', region)
+          // In a real implementation, this would filter the displayed data
+        })
+      })
+    </script>
+  </body>
+</html>
